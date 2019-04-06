@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+  padding-top: 20px;
+}
+
+.spinner-border-load {
+  position: absolute;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}

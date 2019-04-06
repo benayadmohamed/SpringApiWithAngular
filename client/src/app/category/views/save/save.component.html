@@ -1,0 +1,23 @@
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="name">
+      Name:
+      <input id="name" class="form-control" type="text" formControlName="name">
+      <div
+        *ngIf="categoryForm.controls['name'].invalid && (categoryForm.controls['name'].dirty || categoryForm.controls['name'].touched)">
+
+        <small *ngIf="categoryForm.controls['name'].errors.required" class="form-text text-danger"> Name
+          is required.
+        </small>
+        <small *ngIf="categoryForm.controls['name'].errors.minlength" class="form-text text-danger">
+          Name must be at least 3 characters long.
+        </small>
+
+      </div>
+    </label>
+  </div>
+
+  <button [disabled]="categoryForm.invalid|| isLoading" type="submit" class="btn btn-info">Save</button>
+  
+</form>
